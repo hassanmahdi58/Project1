@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <title>City Health</title>
+  </head>
+  <body class="bg-neutral-100">
+    <header>
+        <h1 class="text-center bg-blue-800 p-4 text-blue-100 text-4xl md:bg-teal-800 md:p-4 md:text-teal-100 md:text-5xl lg:bg-green-800 lg:text-green-100 lg:font-semibold lg:text-6xl lg:p-6">City Health in Great Britain</h1>
+        <h2 class="text-center font-semibold bg-blue-200 text-blue-900 text-2xl p-1 md:bg-teal-200 md:text-teal-900 md:text-3xl md:p-2 lg:p-3 lg:text-4xl lg:bg-green-200 lg:text-green-900">Current COVID-19 and Air Quality Statistics</h2>
+    </header>
+    <section class="grid md:grid-cols-2 lg:grid-cols-3">
+    <section class="col-span-1">
+        <form id="user-form" class="rounded-xl m-2 border-2 border-blue-800 text-blue-900 p-4 bg-blue-100 shadow-lg hover:bg-blue-200 md:m-3 md:border-3 md:border-teal-800 md:text-teal-900 md:p-5 md:bg-teal-100 md:shadow-lg md:hover:bg-teal-200 lg:m-4 lg:rounded-xl lg:border-4 lg:border-green-800 lg:text-green-900 lg:p-6 lg:bg-green-100 lg:shadow-lg lg:hover:bg-green-200">
+            <header class="font-semibold p-4 text-xl text-center md:p-5 md:text-2xl lg:p-6 lg:text-3xl">Search for a Place:</header>
+            <div class="grid grid-cols-1 md:grid-cols-2">
+                <input id="input"class="col-span-1 m-1 p-2 rounded-xl border-2 border-blue-800 text-center md:col-span-1 md:border-3 md:border-teal-800 lg:border-4 lg:border-green-800"
+                placeholder="e.g. Birmingham">
+                <button class="col-span-1 m-1 p-2 rounded-xl text-white bg-blue-700 md:col-span-1 md:bg-teal-700  lg:mx-1 lg:bg-green-700 lg:p-2" type="submit" id="search-btn">Search</button>
+              </div>
+        </form>
+        <h2 id="place_group"></h2>
+        <section id="display_container" class="grid grid-rows-4 gap-2 mt-4"></section>
+        <section class="text-center">
+          <section id="previous-term"></section>
+          <!-- tailwind styling for the choice buttons is in JavaScript-->
+            <ul class="grid grid-rows-5 gap-2 mt-4" id="previous-container"></ul>
+        </section>
+    </section>
+    <main class="md:col-span-1 lg:col-span-2">
+      <header class="text-2xl font-semibold text-center text-blue-900 p-4 md:text-3xl md:text-teal-900 md:p-5 lg:text-4xl  lg:text-green-900 lg:p-6" id="Area"></header>
+        <section class="text-blue-900 rounded-lg items-stretch hover:bg-gray-100 shadow-lg bg-white m-2 border-3 border-blue-800 md:m-3 md:text-teal-900 md:border-4 md:border-teal-800 lg:m-4 lg:text-green-900 lg:border-4 lg:border-green-800">
+            <header class="text-2xl font-semibold bg-blue-200 hover:bg-blue-300 text-center md:text-3xl  md:bg-teal-200 md:hover:bg-teal-300  lg:text-4xl lg:bg-green-200 lg:hover:bg-green-300">COVID-19 Statistics</header>
+            <section id="covid" class="bg-white grid-cols-3">
+              <!-- tailwind styling for the individual air COVID-19 stats is in JavaScript-->
+              <div id="covid-cases"></div>
+              <div id="hospital-occupancy"></div>
+              <div id="r-rate"></div>
+            </section>
+        </section>
+        <section class="text-blue-900 rounded-lg items-stretch hover:bg-gray-100 shadow-lg bg-white m-2 border-3 border-blue-800 md:m-3 md:text-teal-900 md:border-4 md:border-teal-800 lg:m-4 lg:text-green-900 lg:border-4 lg:border-green-800">
+            <header class="text-2xl font-semibold bg-blue-200 hover:bg-blue-300 text-center md:text-3xl  md:bg-teal-200 md:hover:bg-teal-300  lg:text-4xl lg:bg-green-200 lg:hover:bg-green-300">Air Pollution Levels</header>
+            <section>
+                <!-- tailwind styling for the individual air quality stats is in JavaScript-->
+                <div class="border-1 border-blue-200 md:border-teal-200 lg:border-2 lg:border-green-200">
+                  <div id="Air-Quality"></div>
+                  <div id="index"></div>
+                </div>
+                <div id="Fine-Particles"></div>
+                <div id="CO"></div>
+                <div id="ozone"></div>
+                <div id="NO"></div>
+                <div id="NO2"></div>
+                <div id="SO2"></div>
+                <div id="NH3"></div>
+            </section>
+        </section>
+    </main>
+    </section>
+    
+     
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+  integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+  crossorigin="anonymous"></script> 
+
+   <!--added jquery library-->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   <script src="./assets/script.js"></script>
+  </body>
+</html>
