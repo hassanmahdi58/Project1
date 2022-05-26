@@ -43,6 +43,6 @@ The API's we use within this application are: OpenWeather Geocoding API, OpenWea
 ### On screen width of below 768px
 ![Deployed Application On minimum screen width of](./assets/deployed-application-phone.png?raw=true)
 
-Project team @dylan @Lisa
+Project team @dylan @Lisa @Hassan
 
 
